@@ -1,0 +1,38 @@
+h1 {
+    color: white;
+    font-size: 68px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    margin: 5px;
+}
+
+body{
+  background-color: #ffe011;
+}
+  
+  .texto{
+  text-align: center;
+    top: 5%;
+    left: 50%; 
+    color: white;
+  font-family: 'Nunito', sans-serif;
+  }
+  
+  
+  .titulo{ width: 15px;
+    height: 15px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    }
+  
+    .flex-containre {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blue;
+    flex-direction: row; 
+      
+  }
+  

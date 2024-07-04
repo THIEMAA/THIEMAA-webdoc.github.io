@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    
+    <div class="flex-container">
+        <a href="index.html" class="inicio">Volver</a>
+        <div class="flex-item item1" onclick="redirectTo('rojo1.html')"></div>
+        <div class="flex-item item2"onclick="redirectTo('azul.html')"></div>
+        <div class="flex-item item3"onclick="redirectTo('verde.html')"></div>
+        <div class="flex-item item4"onclick="redirectTo('amarillo.html')"></div>
+        
+    </div>
+    
+
+    <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+    
+</body>
+</html>

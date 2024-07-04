@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="colorfondo">
+<head>
+  <meta charset="UTF-8">
+  <title>ABUEMEMO</title>
+  <link rel="stylesheet" href="CSS/azul.css">
+</head>
+<body>
+    <a href="colores.html" class="back-button">Volver</a>
+    <div class="texto" class="titulo"><h1>ABUEMEMO<h1/></div>
+    <div class="texto"><h2>Empareja los diferentes momentos de la abuela durante la entrevista.<h2/></div>
+
+    <div class="flex-container memory-game">
+        <div class="memory-card" data-framework="1" onclick="playClickSound()">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="img/abue1.png" alt="Imagen 1">
+                </div>
+                <div class="card-back">
+                    <img src="img/card-back.png" alt="Card Back">
+                </div>
+            </div>
+        </div>
+        <div class="memory-card" data-framework="1" onclick="playClickSound()">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="img/abue1.png" alt="Imagen 1">
+                </div>
+                <div class="card-back">
+                    <img src="img/card-back.png" alt="Card Back">
+                </div>
+            </div>
+        </div>
+        <div class="memory-card" data-framework="2" onclick="playClickSound()">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="img/abue2.png" alt="Imagen 1">
+                </div>
+                <div class="card-back">
+                    <img src="img/card-back.png" alt="Card Back">
+                </div>
+            </div>
+        </div>
+        <div class="memory-card" data-framework="2" onclick="playClickSound()">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="img/abue2.png" alt="Imagen 1">
+                </div>
+                <div class="card-back">
+                    <img src="img/card-back.png" alt="Card Back">
+                </div>
+            </div>
+        </div>
+        <div class="memory-card" data-framework="3" onclick="playClickSound()">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="img/abue3.png" alt="Imagen 1">
+                </div>
+                <div class="card-back">
+                    <img src="img/card-back.png" alt="Card Back">
+                </div>
+            </div>
+        </div>
+        <div class="memory-card" data-framework="3" onclick="playClickSound()">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="img/abue3.png" alt="Imagen 1">
+                </div>
+                <div class="card-back">
+                    <img src="img/card-back.png" alt="Card Back">
+                </div>
+            </div>
+        </div>
+        <div class="memory-card" data-framework="4" onclick="playClickSound()">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="img/abue4.png" alt="Imagen 1">
+                </div>
+                <div class="card-back">
+                    <img src="img/card-back.png" alt="Card Back">
+                </div>
+            </div>
+        </div>
+        <div class="memory-card" data-framework="4" onclick="playClickSound()">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="img/abue4.png" alt="Imagen 1">
+                </div>
+                <div class="card-back">
+                    <img src="img/card-back.png" alt="Card Back">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="recarga">
+        <button class="boton" onclick="restartGame()"><img src="img/reinicio.png"></button>
+    </div>
+      
+    <script src="JS/azul-script.js"></script>
+
+    <script type="text/javascript">
+        var clickAudio = new Audio("audio/click.mp3");
+        var reinicioAudio = new Audio("audio/boton reinicio.mp3");
+
+        function playClickSound() {
+            clickAudio.currentTime = 0;
+            clickAudio.play();
+        }
+
+        function playReinicioSound() {
+            reinicioAudio.currentTime = 0;
+            reinicioAudio.play();
+        }
+        function restartGame() {
+            playReinicioSound();
+            playreinicio()// Puse la función de play audio arriba del todo para que suene siempre que se haga click, no hace falta la de pausa para esto.
+
+            const cards = document.querySelectorAll('.memory-card');
+            cards.forEach(card => {
+              card.classList.remove('flip');
+              card.addEventListener('click', flipCard);
+            });
+            startGame(); // Mezclar las cartas al reiniciar el juego
+            resetBoard(); // Restablecer el estado del tablero
+                    }
+
+      
+    </script>
+</body>
+</html>

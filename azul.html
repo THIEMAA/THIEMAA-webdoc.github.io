@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado</title>
+    <link rel="stylesheet" href="CSS/rojo.css">
+</head>
+<body>
+    <div class="dice-container">
+        <div class="dice" id="dice">
+            <div class="face front"><img src="img/CARA1-100.jpg"></div>
+            <div class="face back"><img src="img/CARA2-100.jpg"></div>
+            <div class="face right"><img src="img/CARA3-100.jpg"></div>
+            <div class="face left"><img src="img/CARA4-100.jpg"></div>
+            <div class="face top"><img src="img/CARA5-100.jpg"></div>
+            <div class="face bottom"><img src="img/CARA6-100.jpg"></div>
+        </div>
+        <div class="mensaje" id="mensaje">Haz click en el dado hasta obtener un 6!</div>
+        <a href="colores.html" class="next-button" id="nextButton" style="display: none;">Avanzar</a>
+    </div>
+
+    <script>
+        function rollDice() {
+            const dice = document.getElementById('dice');
+            const sides = ['front', 'back', 'right', 'left', 'top', 'bottom'];
+            const randomSide = sides[Math.floor(Math.random() * sides.length)];
+            const mensaje = document.getElementById('mensaje');
+            const nextButton = document.getElementById('nextButton');
+
+            dice.className = 'dice'; // Reset class
+            dice.classList.add(randomSide);
+
+            dice.style.animation = 'spin 0.5s ease';
+
+            if (randomSide === 'top') { // Si la cara que salió es "bottom", que corresponde a 6
+                nextButton.style.display = 'block'; // Mostrar el botón "Avanzar"
+            } else {
+                nextButton.style.display = 'none'; // Ocultar el botón "Avanzar" si no es 6
+            }
+
+            // Ocultar el mensaje al dar el primer clic
+            mensaje.style.display = 'none';
+        }
+
+        document.getElementById('dice').addEventListener('click', rollDice);
+    </script>
+</body>
+</html>

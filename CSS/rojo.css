@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap');
+
+body, html {
+    font-family: 'Grandstander', sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #264295;
+    user-select: none; /* Desactiva la selección de texto para toda la página */
+    position: relative; /* Necesario para posicionar el botón de vuelta */
+}
+
+/* Botón de vuelta */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 10; /* Asegura que el botón esté por encima de los demás elementos */
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+}
+
+/* Contenedor de dado */
+.dice-container {
+    perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5; /* Asegura que el dado esté debajo del mensaje */
+}
+
+.dice {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: transform 0.6s ease;
+    user-select: none; /* Desactiva la selección de texto para el dado */
+    cursor: pointer;
+}
+img{
+    width: 100px;
+    height: auto;
+}
+
+.face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 3px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    user-select: none; /* Desactiva la selección de texto para las caras del dado */
+}
+
+/* Posicionamiento de caras del dado */
+.front  { transform: translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+/* Animación opcional de giro */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Animación de parpadeo */
+@keyframes blink {
+    25%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+.mensaje {
+    margin-top: 20px;
+    font-size: 24px;
+    z-index: 5;
+    color: white;
+    animation: blink 3s infinite; /* Animación de parpadeo */
+}
+
+
+.next-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.next-button:hover {
+    background-color: #218838;
+}

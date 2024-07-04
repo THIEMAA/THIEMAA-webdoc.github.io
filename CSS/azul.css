@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap');
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Roboto;
+}
+
+
+.back-button:hover {
+    background-color: #2980b9;
+}
+
+body{
+  overflow-y: hidden;
+}
+
+
+.colorfondo {background-color: #eb1c24;}
+
+
+h2{ color: #ffe011;
+  font-size: 28px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+  color: #ffe011;
+  font-size: 68px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  margin: 5px;
+}
+
+.texto{
+    text-align: center;
+      top: 5%;
+      left: 50%; 
+      color: white;
+    font-family: 'Nunito', sans-serif;
+}
+      
+.titulo{ width: 15px;
+      height: 15px;
+      margin: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+}
+  
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; 
+  margin-top: 10px;  
+}
+
+.recarga {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.memory-game {
+  display: flex;
+  flex-wrap: wrap;
+  height: 450px;
+  width: 900px;
+  justify-content: center;
+  margin: auto;
+}
+
+/* la altura del flex es para que las tarjetas se vean en todas las computadores igualmente organizadas */
+
+.memory-card {
+  width: 180px;
+  height: 180px;
+  margin: 10px; /* Reduce el espacio entre las tarjetas */
+  cursor: pointer;
+}
+
+
+.grab {cursor: -webkit-grab; cursor: grab;}
+
+
+.memory-card .card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg); /* Mostrar inicialmente la parte trasera */
+}
+
+.memory-card.flip .card-inner {
+  transform: rotateY(0deg); /* Girar hacia el interior al hacer clic */
+}
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ .boton {
+  width: 85px;
+  height: 85px;
+  perspective: 1000px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  cursor: pointer;
+}
+
+
+
+button {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+ 
+  body {background-color: #d44737;}
+  .memory-game {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+  .memory-card {
+    width: 90px;
+    height: 90px;
+    perspective: 1000px;
+    margin: 8px;
+  }
+
+
+
+  h1 {
+    margin: 7px;
+    color: #efd56a;
+    font-size: 35px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .texto{
+
+  text-align: center;
+    top: 5%;
+    left: 50%; 
+    color: white;
+  font-family: 'Nunito', sans-serif;
+  }
+
+
+  .titulo{ width: 0px;
+    height: 0px;
+  
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    margin: auto;
+    
+    }
+
+
+
+  .boton {
+    width: 62px;
+    height: 62px;
+    perspective: 1000px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
