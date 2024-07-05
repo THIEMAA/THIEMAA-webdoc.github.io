@@ -1,16 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
-    background-image: url('../img/abueludo.jpg');
+    background-image: url('../img/cajaludo.jpg');
     background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-attachment: fixed; /* Fija la imagen al fondo */
-}
-
-.container {
-    width: 100vw; /* Usa 100vw para el ancho completo */
-    height: 100vh; /* Usa 100vh para la altura completa */
+    height: 100vh; /* Asegura que el body tenga la altura completa de la ventana */
+    margin: 0; /* Elimina los márgenes predeterminados */
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white; /* Color del texto para contraste */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre los botones */
+}
+
+.cerrar, .entrevista-boton {
+    color: black;
+    font-size: 30px;
+    padding: 10px 20px;
+    margin-top: 480px;
+    background-color: white;
+    font-family: 'Grandstander';
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+}
+
+.cerrar:hover, .entrevista-boton:hover {
+    background-color: black;
+    color: white;
 }
