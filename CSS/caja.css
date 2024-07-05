@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    background-image: url('../img/cajaludo.jpg');
+    background-image: url('../img/cajaludo.png');
     background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -21,11 +21,11 @@ body {
 }
 
 .cerrar, .entrevista-boton {
-    color: black;
+    color: white;
     font-size: 30px;
     padding: 10px 20px;
     margin-top: 480px;
-    background-color: white;
+    background-color: black;
     font-family: 'Grandstander';
     border-radius: 5px;
     cursor: pointer;
@@ -36,6 +36,6 @@ body {
 }
 
 .cerrar:hover, .entrevista-boton:hover {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
